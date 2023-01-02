@@ -1,0 +1,228 @@
+TASK 1
+--------------------------------------------------------------------------------------------------------
+;program to print a character on screen
+dosseg
+.model small
+.stack 100h
+.data
+.code
+main proc
+mov dl,'D'
+mov ah,2
+int 21h
+
+mov dl,'a'
+mov ah,2
+int 21h
+
+mov dl,'w'
+mov ah,2
+int 21h
+
+mov dl,'o'
+mov ah,2
+int 21h
+
+mov dl,'o'
+mov ah,2
+int 21h
+
+mov dl,'d'
+mov ah,2
+int 21h
+
+mov dl,' '
+mov ah,2
+int 21h
+
+mov dl,'k'
+mov ah,2
+int 21h
+
+mov dl,'h'
+mov ah,2
+int 21h
+
+mov dl,'a'
+mov ah,2
+int 21h
+
+mov dl,'n'
+mov ah,2
+int 21h
+
+mov ah, 4ch
+int 21h
+main endp 
+end main
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+TASK 2
+;program to take an input and display it
+dosseg
+.model small
+.stack 100h
+.data
+.code
+main proc
+mov ah, 1; 1 after ah means that we want to take an input
+int 21h
+
+mov dl, al; by default input value goes to al register al means alow and ah means ahigh
+sub dl, 1;
+mov ah, 2
+int 21h
+
+mov ah,4ch
+int 21h
+main endp
+end main
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+TASK 3
+;program to input a small letter and return a capital
+dosseg
+.model small
+.stack 100h
+.data
+.code
+
+main proc
+mov ah, 1; 1 after ah means that we want to take an input
+int 21h
+
+mov dl, al; by default input value goes to al register al means alow and ah means ahigh
+sub dl, 32
+mov ah, 2
+int 21h
+
+mov ah,4ch
+int 21h
+
+main endp
+end main
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+TASK 4
+;program to subtract two numbers
+dosseg
+.model small
+.stack 100h
+.data
+.code
+main proc
+mov ah, 01h
+int 21h
+
+mov cl, al
+
+
+mov dl, 45
+mov ah, 2
+int 21h
+
+mov ah, 01h
+int 21h
+
+mov bl, al
+
+
+mov dl, 61
+mov ah, 2
+int 21h
+
+sub cl, bl
+mov dl, cl
+add dl, 48
+mov ah, 2
+int 21h
+
+mov ah, 4ch
+int 21h
+main endp
+end main
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+TASK 5
+;program to add two numbers
+dosseg
+.model small
+.stack 100h
+.data
+.code
+main proc
+mov ah, 01h
+int 21h
+
+mov cl, al
+
+
+mov dl, 43
+mov ah, 2
+int 21h
+
+mov ah, 01h
+int 21h
+
+mov bl, al
+
+
+mov dl, 61
+mov ah, 2
+int 21h
+
+add bl, cl
+mov dl, bl
+sub dl, 48
+mov ah, 2
+int 21h
+
+mov ah, 4ch
+int 21h
+main endp
+end main
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+TASK 6
+;program to subtract two numbers
+dosseg
+.model small
+.stack 100h
+.data
+.code
+main proc
+mov ah, 01h
+int 21h
+
+mov cl, al
+
+
+mov dl, 'x'
+mov ah, 2
+int 21h
+
+
+mov dl, '2'
+mov ah, 2
+int 21h
+
+mov dl, 61
+mov ah, 2
+int 21h
+
+add cl, cl
+mov dl, cl
+sub dl, 48
+mov ah, 2
+int 21h
+
+mov ah, 4ch
+int 21h
+main endp
+end main
+
